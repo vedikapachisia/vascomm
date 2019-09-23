@@ -4,6 +4,7 @@ dbms project
 ## TODO
 - [x] List the services offered by our carrier
 - [x] Design the schemas
+- [ ] Generate random data
 - [ ] Connect it to django
 - [ ] Populate the database
 - [ ] Simulate the carrier
@@ -37,7 +38,7 @@ dbms project
 1. user_details 
    1. user_id
    1. name
-   1. age
+   1. dob
    1. phone
    1. plan
 1. usage_details  
