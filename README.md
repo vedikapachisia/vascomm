@@ -27,37 +27,37 @@ dbms project
 
 ### Schemas
 1. plans  
-   1. plan_id  
-   1. free_talktime
-   1. free_sms
-   1. free_data
-   1. call_rate
-   1. sms_rate
-   1. data_rate
-   1. price
+   1. plan_id  (string, primary key)
+   1. free_talktime (number)
+   1. free_sms (num)
+   1. free_data  (num)
+   1. call_rate  (decimal)
+   1. sms_rate  (decimal)
+   1. data_rate  (decimal)
+   1. price  (decimal)
 1. user_details 
-   1. user_id
-   1. name
-   1. dob
-   1. phone
-   1. plan_id
+   1. user_id (int autoincrement)
+   1. name  (string)
+   1. dob  (date)
+   1. phone  (num)
+   1. plan_id  (string)
 1. usage_details  
-   1. user_id
-   1. call_amount
-   1. sms_amount
-   1. data_amount
-   1. total_amount
+   1. user_id (number - autoincrement)
+   1. call_amount (decimal)
+   1. sms_amount (decimal)
+   1. data_amount (decimal)
+   1. total_amount (decimal)
 1. calls_log  
-   1. call_id
-   1. user_id
+   1. call_id (number, autoincrement)
+   1. user_id (number, autoincrement)
    1. call_start (TIME)
    1. call_end (TIME)
 1. sms_log 
-   1. sms_id 
-   1. user_id
-   1. message_time
+   1. sms_id  (number, autoincrement)
+   1. user_id (number, autoincrement)
+   1. message_time (time)
 1. data_log 
-   1. data_id 
-   1. user_id
-   1. usage_time
-   1. data_used
+   1. data_id  (number, autoincrement)
+   1. user_id  (number, autoincrement)
+   1. usage_time (time)
+   1. data_used (decimal)
