@@ -40,21 +40,24 @@ dbms project
    1. name
    1. dob
    1. phone
-   1. plan
+   1. plan_id
 1. usage_details  
-   1. uid
+   1. user_id
    1. call_amount
    1. sms_amount
    1. data_amount
    1. total_amount
 1. calls_log  
-   1. uid
+   1. call_id
+   1. user_id
    1. call_start (TIME)
    1. call_end (TIME)
-1. sms_log  
-   1. uid
+1. sms_log 
+   1. sms_id 
+   1. user_id
    1. message_time
-1. data_log  
-   1. uid
+1. data_log 
+   1. data_id 
+   1. user_id
    1. usage_time
    1. data_used
