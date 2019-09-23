@@ -2,11 +2,13 @@ import random
 
 s = set()
 
-file = open("phone_numbers", "w")
+f = open("phone_numbers.txt", "a+")
 
-    while s.__len__()  < 1000:
+while(len(s)  < 1000):
+    
+    phone = random.randint(100000000, 999999999)
+    phone = str(random.randint(6, 9)) + str(phone)
+    s.add(phone)
         
-        phone = random.randint(1000000000, 9999999999)
-        s.add(phone)
-        
-file.write(s)
+for item in s:
+    f.write((item) + "\n")
