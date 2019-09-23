@@ -37,7 +37,7 @@ dbms project
 1. user_details 
    1. user_id
    1. name
-   1. age
+   1. dob
    1. phone
    1. plan
 1. usage_details  
