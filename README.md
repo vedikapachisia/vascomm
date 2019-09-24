@@ -37,7 +37,7 @@ dbms project
    1. price  (decimal)
 1. user_details 
    1. user_id (int autoincrement)
-   1. name  (string)
+   1. user_name  (string)
    1. dob  (date)
    1. phone  (num)
    1. plan_id  (string)
