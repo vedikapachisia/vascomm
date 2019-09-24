@@ -1,47 +1,47 @@
 CREATE TABLE plans(
 	plan_id VARCHAR(6) PRIMARY KEY, 
-	free_talktime INT,
-    free_sms INT,
-    free_data INT,
-    call_rate INT,
-    sms_rate DECIMAL,
-    data_rate DECIMAL,
-    price DECIMAL
+	free_talktime INT NOT NULL,
+    free_sms INT NOT NULL,
+    free_data INT NOT NULL,
+    call_rate INT NOT NULL,
+    sms_rate DECIMAL NOT NULL,
+    data_rate DECIMAL NOT NULL,
+    price DECIMAL NOT NULL
 );
 
 CREATE TABLE user_details(
-    user_id INT AUTO_INCREMENT,
-    user_name VARCHAR(45),
-    dob DATE,
-    phone INT,
-    plan_id VARCHAR(45)
+    user_id INT AUTO_INCREMENT NOT NULL,
+    user_name VARCHAR(45) NOT NULL,
+    dob DATE NOT NULL,
+    phone INT NOT NULL,
+    plan_id VARCHAR(45) NOT NULL
 );
 
 CREATE TABLE usage_details(
-    user_id INT AUTO_INCREMENT,
-    call_amount DECIMAL,
-    sms_amount DECIMAL,
-    data_amount DECIMAL,
-    total_amount DECIMAL
+    user_id INT AUTO_INCREMENT NOT NULL,
+    call_amount DECIMAL NOT NULL,
+    sms_amount DECIMAL NOT NULL,
+    data_amount DECIMAL NOT NULL,
+    total_amount DECIMAL NOT NULL
 );
 
 CREATE TABLE calls_log(
-    call_id INT AUTO_INCREMENT,
-    user_id INT AUTO_INCREMENT,
-    call_start TIME,
-    call_end TIME
+    call_id INT AUTO_INCREMENT NOT NULL,
+    user_id INT AUTO_INCREMENT NOT NULL,
+    call_start TIME NOT NULL,
+    call_end TIME NOT NULL
 );
 
 CREATE TABLE sms_log(
-    sms_id INT AUTO_INCREMENT,
-    user_id INT AUTO_INCREMENT, 
-    message_time TIME
+    sms_id INT AUTO_INCREMENT NOT NULL,
+    user_id INT AUTO_INCREMENT NOT NULL, 
+    message_time TIME NOT NULL
 );
 
 CREATE TABLE data_log(
-    data_id INT AUTO_INCREMENT,
-    user_id INT AUTO_INCREMENT,
-    usage_time TIME,
-    data_used DECIMAL
+    data_id INT AUTO_INCREMENT NOT NULL,
+    user_id INT AUTO_INCREMENT NOT NULL,
+    usage_time TIME NOT NULL,
+    data_used DECIMAL NOT NULL
 );
     
