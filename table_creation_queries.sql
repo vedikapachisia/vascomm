@@ -19,7 +19,7 @@ CREATE TABLE user_details(
     user_id INT PRIMARY KEY AUTO_INCREMENT,
     user_name VARCHAR(45) NOT NULL,
     dob DATE NOT NULL,
-    phone INT NOT NULL,
+    phone VARCHAR(10) NOT NULL,
     /*size of plan_id will be equal to plans.plan_id*/
     plan_id VARCHAR(6) NOT NULL,
     FOREIGN KEY (plan_id) REFERENCES plans(plan_id)
