@@ -2,8 +2,9 @@
 dbms project
 
 ## TODO
-- [x] List the services offered by our carrier
-- [x] Design the schemas
+- [x] List the services offered by our carrier (Shayak, Vedika)
+- [x] Design the schemas (Shayak, Vedika)
+- [x] Write SQL queries for table creation (Ananya)
 - [x] Generate random data
 - [ ] Connect it to django
 - [ ] Populate the database
