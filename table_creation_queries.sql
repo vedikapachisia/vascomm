@@ -9,6 +9,12 @@ CREATE TABLE plans(
     price DECIMAL NOT NULL
 );
 
+/* Contents of plans table*/
+INSERT INTO plans VALUES
+('INT600', 200, 1000, 12, 5, 3, 1),
+('DOM339', 0, 1000, 30, 0, 1, 0.1),
+('DOM099', 100, 150, 10, 0.3, 1, 0.1);
+
 CREATE TABLE user_details(
     user_id INT AUTO_INCREMENT NOT NULL,
     user_name VARCHAR(45) NOT NULL,
