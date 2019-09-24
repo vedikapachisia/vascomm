@@ -11,20 +11,22 @@ CREATE TABLE plans(
 
 /* Contents of plans table*/
 INSERT INTO plans VALUES
-('INT600', 200, 1000, 12, 5, 3, 1),
-('DOM339', 0, 1000, 30, 0, 1, 0.1),
-('DOM099', 100, 150, 10, 0.3, 1, 0.1);
+('INT600', 200, 1000, 12, 5, 3, 1, 600),
+('DOM339', 0, 1000, 30, 0, 1, 0.1, 339),
+('DOM099', 100, 150, 10, 0.3, 1, 0.1, 99);
 
 CREATE TABLE user_details(
-    user_id INT AUTO_INCREMENT NOT NULL,
+    user_id INT PRIMARY KEY AUTO_INCREMENT,
     user_name VARCHAR(45) NOT NULL,
     dob DATE NOT NULL,
     phone INT NOT NULL,
-    plan_id VARCHAR(45) NOT NULL
+    /*size of plan_id will be equal to plans.plan_id*/
+    plan_id VARCHAR(6) NOT NULL,
+    FOREIGN KEY (plan_id) REFERENCES plans(plan_id)
 );
 
 CREATE TABLE usage_details(
-    user_id INT AUTO_INCREMENT NOT NULL,
+    user_id INT PRIMARY KEY AUTO_INCREMENT,
     call_amount DECIMAL NOT NULL,
     sms_amount DECIMAL NOT NULL,
     data_amount DECIMAL NOT NULL,
@@ -32,22 +34,25 @@ CREATE TABLE usage_details(
 );
 
 CREATE TABLE calls_log(
-    call_id INT AUTO_INCREMENT NOT NULL,
-    user_id INT AUTO_INCREMENT NOT NULL,
+    call_id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT NOT NULL,
     call_start TIME NOT NULL,
-    call_end TIME NOT NULL
+    call_end TIME NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES user_details(user_id)
 );
 
 CREATE TABLE sms_log(
-    sms_id INT AUTO_INCREMENT NOT NULL,
-    user_id INT AUTO_INCREMENT NOT NULL, 
-    message_time TIME NOT NULL
+    sms_id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT NOT NULL, 
+    message_time TIME NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES user_details(user_id)
 );
 
 CREATE TABLE data_log(
-    data_id INT AUTO_INCREMENT NOT NULL,
-    user_id INT AUTO_INCREMENT NOT NULL,
+    data_id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT NOT NULL,
     usage_time TIME NOT NULL,
-    data_used DECIMAL NOT NULL
+    data_used DECIMAL NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES user_details(user_id)
 );
     
