@@ -13,8 +13,8 @@ dbms project
 - [x] Design the schemas (Shayak, Vedika)
 - [x] Write SQL queries for table creation (Ananya, Shayak)
 - [x] Generate random data
+- [x] Connect it to django
 - [ ] Write a simulation
-- [ ] Connect it to django
 - [ ] Populate the database
 - [ ] Simulate the carrier
 - [ ] Build the front end
