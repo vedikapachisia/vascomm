@@ -1,11 +1,19 @@
 # vascomm
 dbms project
 
+## prerequisites
+1. mysql
+1. pip
+1. django
+1. mysqlclient
+1. create a database in mysql named 'django'
+
 ## TODO
 - [x] List the services offered by our carrier (Shayak, Vedika)
 - [x] Design the schemas (Shayak, Vedika)
 - [x] Write SQL queries for table creation (Ananya, Shayak)
 - [x] Generate random data
+- [ ] Write a simulation
 - [ ] Connect it to django
 - [ ] Populate the database
 - [ ] Simulate the carrier
