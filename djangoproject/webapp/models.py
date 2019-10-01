@@ -16,7 +16,7 @@ class UserDetails(models.Model):
     user_name = models.CharField(max_length=45)
     dob = models.DateField()
     phone = models.CharField(max_length=10)
-    plan_id = models.ForeignKey(Plans, on_delete=models.CASCADE, default="INT600")
+    plan = models.ForeignKey(Plans, on_delete=models.CASCADE, default="INT600")
 
 class UsageDetails(models.Model):
     user = models.ForeignKey(UserDetails, on_delete=models.CASCADE)
@@ -27,17 +27,17 @@ class UsageDetails(models.Model):
 
 class CallsLog(models.Model):
     call_id = models.AutoField(primary_key=True)
-    user_id = models.ForeignKey(UserDetails, on_delete=models.CASCADE)
+    user = models.ForeignKey(UserDetails, on_delete=models.CASCADE)
     call_start = models.TimeField()
     call_end = models.TimeField()
 
 class SmsLog(models.Model):
     sms_id = models.AutoField(primary_key=True)
-    user_id = models.ForeignKey(UserDetails, on_delete=models.CASCADE)
+    user = models.ForeignKey(UserDetails, on_delete=models.CASCADE)
     message_time = models.TimeField()
 
 class DataLog(models.Model):
     data_id = models.AutoField(primary_key=True)
-    user_id = models.ForeignKey(UserDetails, on_delete=models.CASCADE)
+    user = models.ForeignKey(UserDetails, on_delete=models.CASCADE)
     usage_time = models.TimeField()
     data_used = models.DecimalField(decimal_places=2, max_digits=30)
