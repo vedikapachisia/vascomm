@@ -8,6 +8,11 @@ dbms project
 1. mysqlclient
 1. create a database in mysql named 'django'
 
+## Running the application
+1. Open the root folder in the command line and write the command ```python3 djangoproject/manage.py runserver```  
+2. browse to http://127.0.0.1:8000/webapp/
+3. After the page opens, paste http://127.0.0.1:8000/webapp/simulate_calls in the browser and go. The values in the webpage will themselves start changing.
+
 ## TODO
 - [x] List the services offered by our carrier (Shayak, Vedika)
 - [x] Design the schemas (Vedika, Shayak)
