@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Vascomm</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css"
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+
+  <!-- Material Dashboard CSS -->
+  <link rel="stylesheet" href="/static/material-dashboard/assets/css/material-dashboard.css">
+  <link rel="stylesheet" href="/static/material-dashboard/main.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      setInterval(function () {  // set Interval function to carry out same operation in the time specified
+        $('#connectedInCall').load('read_from_file');
+        $('#connectedInCall').insertAfter('</tbody></table>');
+        $('#data_usage').load('read_data_data');
+        $('#active_users').load('read_no_connected');
+        $('#sms_data').load('read_sms_data');
+        $('#sms_data').insertAfter('</tbody></table>');
+        $('#revenue_collected').load('revenue_data');
+        $('#revenue_collected').insertBefore("Rs. ");
+
+
+      }, 500);
+    });
+
+
+  </script>
+
+</head>
+
+<body class="dark-edition">
+  <h1>Hello, Admin!</h1>
+
+  <!-- <a href="#" class="btn btn-primary btn-lg disabled" role="button" aria-disabled="true">Primary link</a>
+    <a href="#" class="btn btn-secondary btn-lg disabled" role="button" aria-disabled="true">Link</a> -->
+
+  <div class="row">
+    <div class="col-lg-6">
+
+
+      <div class="row">
+        <!-- Total registered users-->
+        <div class="col-md-6 col-sm-6">
+          <div class="card card-stats stat-card">
+            <div class="card-header card-header-info card-header-icon">
+              <div class="card-icon">
+                <i class="material-icons">people</i>
+              </div>
+              <p class="card-category">Users</p>
+              <h3 class="card-title"> {{ total_users }} <br><small>Registered</small></h3>
+            </div>
+            <div class="card-footer">
+              <div class="stats">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Currently connected users (the ones taking a call) -->
+        <div class="col-md-6 col-sm-6">
+          <div class="card card-stats stat-card">
+            <div class="card-header card-header-success card-header-icon">
+              <div class="card-icon">
+                <i class="material-icons">people_outline</i>
+              </div>
+              <p class="card-category">Connected</p>
+              <h3 class="card-title"> <text id="active_users"></text> <br><small>Users</small></h3>
+            </div>
+            <div class="card-footer">
+              <div class="stats">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Total revenue collected -->
+        <div class="col-md-6 col-sm-6">
+          <div class="card card-stats stat-card">
+            <div class="card-header card-header-warning card-header-icon">
+              <div class="card-icon">
+                <i class="material-icons">attach_money</i>
+              </div>
+              <p class="card-category">Revenue</p>
+              <h3 class="card-title"><text id="revenue_collected"></text> <br><small>Total</small></h3>
+            </div>
+            <div class="card-footer">
+              <div class="stats">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Currently connected users (the ones taking a call) -->
+        <div class="col-md-6 col-sm-6">
+          <div class="card card-stats stat-card">
+            <div class="card-header card-header-primary card-header-icon">
+              <div class="card-icon">
+                <i class="material-icons">ballot</i>
+              </div>
+              <p class="card-category">Active plans</p>
+              <h3 class="card-title" id="active_users"> 3 <br><small>Plans</small></h3>
+            </div>
+            <div class="card-footer">
+              <div class="stats">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="col-lg-6">
+      <!-- Callers list -->
+      <div class="card callers-list">
+        <div class="card-body">
+          <h4>Users Connected In A Call</h4>
+          <text id="connectedInCall"></text>
+          <!-- <table class="table">
+            <thead class="text-primary">
+              <th>User 1</th>
+              <th>User 2</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Vedika Pachisia</td>
+                <td>Vedika ki mammi</td>
+              </tr>
+              <tr>
+                <td>John Wick</td>
+                <td>James Bond</td>
+              </tr>
+              <tr>
+                <td>Forest Gump</td>
+                <td>Lal singh chaddha</td>
+              </tr>
+
+              <tr>
+                <td>Swojas Mondal</td>
+                <td>Shayak Banerjee</td>
+              </tr>
+              <tr>
+                <td>Spiderman</td>
+                <td>Iron man</td>
+              </tr>
+
+              <tr>
+                <td>Wayne Rooney</td>
+                <td>Lionell Messi</td>
+              </tr>
+              <tr>
+                <td>Sabri</td>
+                <td>Sabamani</td>
+              </tr>
+            </tbody>
+          </table> -->
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card long-col">
+        <div class="card-header">
+          <div class="card-title">
+            <h4>User Details</h4>
+            <table class="table">
+              <thead class="text-primary">
+                <th>ID</th>
+                <th>User name</th>
+                <th>DoB</th>
+                <th>Phone</th>
+                <th>Plan</th>
+              </thead>
+              <tbody>
+                {% for u in users %}
+                <tr>
+                  <td>{{ u.user_id }}</td>
+                  <td>{{ u.user_name }}</td>
+                  <td>{{ u.dob }}</td>
+                  <td>{{ u.phone }}</td>
+                  <td>{{ u.plan }}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card long-col">
+        <div class="card-header">
+          <div class="card-title">
+            <h4>Recent Messages</h4>
+          </div>
+          <div class="card-body">
+            <text id="sms_data"></text>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card long-col">
+        <div class="card-header">
+          <div class="card-title">
+            <h4>Data usage</h4>
+          </div>
+          <div class="card-body">
+            <text id="data_usage"></text>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+  <!--   Core JS Files   -->
+  <script src="/static/material-dashboard/assets/js/core/jquery.min.js"></script>
+  <script src="/static/material-dashboard/assets/js/core/popper.min.js"></script>
+  <script src="/static/material-dashboard/assets/js/bootstrap-material-design.js"></script>
+
+  <script src="https://unpkg.com/default-passive-events"></script>
+
+  <!--  Notifications Plugin, full documentation here: http://bootstrap-notify.remabledesigns.com/    -->
+  <script src="/static/material-dashboard/assets/js/plugins/bootstrap-notify.js"></script>
+
+  <!--  Charts Plugin, full documentation here: https://gionkunz.github.io/chartist-js/ -->
+  <script src="/static/material-dashboard/assets/js/core/chartist.min.js"></script>
+
+  <!-- Plugin for Scrollbar documentation here: https://github.com/utatti/perfect-scrollbar -->
+  <script src="/static/material-dashboard/assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+
+
+  <!-- Demo init -->
+  <script src="/static/material-dashboard/assets/js/plugins/demo.js"></script>
+
+  <!-- Material Dashboard Core initialisations of plugins and Bootstrap Material Design Library -->
+  <script src="/static/material-dashboard/assets/js/material-dashboard.js?v=2.1.0"></script>
+</body>
+
+</html>

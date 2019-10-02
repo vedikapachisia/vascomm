@@ -1,0 +1,13 @@
+body {
+    padding: 50px;
+}
+
+.stat-card {
+    min-height: 160px;
+}
+
+.callers-list, .long-col {
+    min-height: 380px;
+    max-height: 380px;
+    overflow: scroll;
+}
