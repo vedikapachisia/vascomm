@@ -7,6 +7,9 @@ import json
 import random
 import datetime
 
+# Author: P.R. Ananya, Shayak Banerjee, Vedika Pachisia
+# Date: 28 Oct '19
+# Version: 1.0
 
 # Create your views here.
 def index(request):

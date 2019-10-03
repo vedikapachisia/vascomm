@@ -7,6 +7,11 @@ import datetime
 
 user_details = list(UserDetails.objects.all())
 
+# Author: P.R. Ananya, Shayak Banerjee, Vedika Pachisia
+# Date: 28 Oct '19
+# Version: 1.0
+
+
 def get_random_time():
     t = random.randint(1, 100) * 0.01
     return t

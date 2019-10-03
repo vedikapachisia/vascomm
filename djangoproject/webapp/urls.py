@@ -1,6 +1,11 @@
 from django.urls import path
 from . import views
 
+# Author: P.R. Ananya, Shayak Banerjee, Vedika Pachisia
+# Date: 28 Oct '19
+# Version: 1.0
+
+
 urlpatterns = [
     path('', views.index, name='index'),
     path('text', views.text, name='text'),

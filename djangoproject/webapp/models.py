@@ -1,5 +1,10 @@
 from django.db import models
 
+# Author: P.R. Ananya, Shayak Banerjee, Vedika Pachisia
+# Date: 28 Oct '19
+# Version: 1.0
+
+
 # Create your models here.
 class Plans(models.Model):
     plan_id = models.CharField(max_length = 6, primary_key=True)
