@@ -19,12 +19,13 @@ dbms project
 - [x] Write SQL queries for table creation (Ananya, Shayak)
 - [x] Generate random data (Vedika, Shayak)
 - [x] Connect it to django (Shayak)
-- [ ] Write django models and test (Vedika)
-- [ ] Write a simulation (Shayak)
-- [ ] Populate the database
-- [ ] Simulate the carrier
-- [ ] Build the front end
-- [ ] Connect the front end
+- [x] Write django models and test (Vedika)
+- [x] Write a simulation (Shayak)
+- [x] Populate user_details and plans (Vedika, Shayak)
+- [ ] Write the method for populating the dynamic tables
+- [x] Simulate the carrier
+- [x] Build the front end
+- [x] Connect the front end
 
 ### List of services
 1. 'INT600' - 
